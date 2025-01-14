@@ -2,7 +2,7 @@
 Add next dependency to `pyproject.toml`:
 ```toml
 [tool.poetry.dependencies]
-dragontools = { git = "ssh://git@github.com/kaluckii/dragontools.git", branch = "main" }
+dragon = { git = "ssh://git@github.com/kaluckii/dragon.git", branch = "main" }
 ```
 
 Then, run `poetry install` and package will be installed.
