@@ -1,0 +1,10 @@
+[tool.poetry]
+name = "dragon"
+version = "0.8.2"
+description = "private shared tools module."
+authors = ["Kaluckii"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+aiogram = "^3.17.0"
+pytz = "^2024.2"
