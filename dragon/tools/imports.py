@@ -1,6 +1,6 @@
 import glob
 import importlib
-from typing import List, Optional, Any
+from typing import List, Optional
 
 
 def escape_module(module: str) -> str:
@@ -33,23 +33,5 @@ def import_webviews(path: Optional[str] = "web/*/**/webviews.py") -> None:
     :raises ModuleNotFoundError: If a module cannot be found during the import.
     """
 
-
     for m in glob.iglob(path, recursive=True):
         importlib.import_module(escape_module(m))
-
-
-def export_routers(path: Optional[str] = 'web/*/**/webviews.py') -> List[Any]:
-    """
-    Import all FastAPI routers dynamically, by default from "web" directory.
-
-    :raises ModuleNotFoundError: If a module cannot be found during the import.
-    """
-
-    routers = []
-    for m in glob.iglob(path, recursive=True):
-        module = importlib.import_module(escape_module(m))
-
-        if hasattr(module, 'router'):
-            routers.append(module.router)
-
-    return routers
